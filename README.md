@@ -1,65 +1,79 @@
-# Phase 1 Project
+# Microsoft Film Studios Debut - Movie Analysis & Recommendations 
+The aim of this repository is to perform a quantitative analysis of the the top movies in the past century in relation to return on inverstment with major studio budget, over fifteen million USD after accounting for infaltion from their initial release date, the expectations for Microsoft's ROI and the total budgetary figure it would take to launch a successfull initial blockbuster 
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+We will be working with data from the following sources:
+1. IMdB - Title Basics 
+2. tn (The Numbers) - Movie Budgets
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
+The CSV files used for the analysis can be found in the ```zipped_data``` folder.
 
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
+The analysis revealed three business recommendations/findings Microsoft could implement and expect with the debut of MS Studios and are listed below:
 
-## Project Overview
+1. The movie genre should be one of the following:
+    1. Drama
+    2. Adventrue
+    3. Comedy 
+    4. Action
+2. The movie will cost around the following:
+    1. Drama - 26M USD
+    2. Adventrue - 83M USD
+    3. Comedy - 32M USD
+    4. Action - 39M USD
+3. The expected return on investment:
+    1. Drama - 14.7x
+    2. Adventrue - 14.2x
+    3. Comedy - 15.6x
+    4. Action - 13.5x
+    
+The analysis was performed using python and the code and be found in ```Main Notebook.ipynb```
 
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
+# Business Problem
+Analyzing the monetary data from movies of the last century and adjusting all monetary figures to account for inflation is how we give Microsoft a realistic expecations of the amount of money needed to make a blockbuster hit and how much money they could expect in return. We will be looking at what genre movies is the most profitable, how much Microsoft should expect the movie to cost and how much they can expect to make back. 
 
-### Business Problem
+We also selected movies with budgets over fifteen million dollars as movies with lower budgets do reflect higher ROIs, however these movies have less box office sales and thus are misleading and should be trated as outliers. 
 
-Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
+# Data
 
-### The Data
+The data used in this analysis was provided by Flatiron School and came from IMdB (Internet Movie Data Base) & tn (The Numbers) websites. The following libraries were leverage to perfrom the analysis ```glob, plotly, pandas, numpy, matplotlib, seaborn & cpi```.
 
-In the folder `zippedData` are movie datasets from:
+We first analyzed the movie_budgets.csv file to acquire an understanding of the financials of all the movies for the last 100 years. After that, all monetary values were adjusted for inflation to get a better understanding of the real financial commiment Microsoft will have to take if they are to produce a blockbuster debut film. 
 
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
+The data was then sorted by return on investment and modified to relefect only movies with budgets over 15 million USD. This was done to show the top 100 most profitable movies with the exception of low-budget films as cult classics are usually outliers in the indie film industry and their return on investment is disproportionate to other films. 
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+Data from title_basics.csv was then used to asign a genre to each of the top movies. Once the dataframes refelcted the genre data we examined the frequency of the each genre and complied a list of the top four most popular genres from the most profitable studio-budget films of the last one hundred years. 
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+Lastly the we examined each genre individually to acquire a mean for the total movie budgets and the expected return on investment. 
 
-## Deliverables
+# Results
 
-There are three deliverables for this project:
+## The most popular genres are Drama, Comedy, Adventure & Action
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+<div>
+<img src="genres.png" width="750"/>
+</div>
 
-### Key Points
+The plot shows us the 4 most popular movie genre for the most profitable studio-budget movies of the past century 
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+**We recommend Microsoft target one of these four genres in their upcoming film debut**
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+We also analyzed the what the expeected budgetary needs Microsoft will have to finance their studio film debut
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
 
-## Getting Started
+**We recommend Microsoft go with the most popular genre which also happens to be the most economical: Drama**
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
+<div>
+<img src="budget2.png" width="1000"/>
+</div>
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+Lastly we analyzed the ROI metric for each of the genres as the plot shows below
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
 
-## Project Submission and Review
+**Per analysis we can recommend Microsoft's financial officer can expect an ROI of: 14.76x**
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+<div>
+<img src="roi.png" width="1000"/>
+</div>
 
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+# Command to convert jupyter notebook to markdown file
+jupyter nbconvert --to markdown README.ipynb
