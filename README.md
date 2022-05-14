@@ -74,6 +74,3 @@ Lastly we analyzed the ROI metric for each of the genres as the plot shows below
 <div>
 <img src="roi.png" width="1000"/>
 </div>
-
-# Command to convert jupyter notebook to markdown file
-jupyter nbconvert --to markdown README.ipynb
